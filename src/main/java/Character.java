@@ -13,17 +13,25 @@
  * Follow the instructions in the to-do items listed below.
  */
 public class Character {
-
+    public String name;
     // todo: Create a property to hold the character's name
-
+    public String type;
     // todo: Create a property to hold the character's type. This will be free-form text.
-
+    public double health;
     // todo: create a property to hold the character's health. This should be a double value.
-
+    public double power;
     // todo: Create a property to hold the character's power. This should be a double value.
+    public Character(String name, String type, double health, double power){
+        this.power= power;
+        this.type= type;
+        this.health= health;
+        this.name= name;
 
+    }
     // todo: Create a constructor that accepts and sets the default values for the name, type, health, and power properties. Note that the order specified is required for tests to pass.
-
+    public void attack(Character character){
+    character.health= character.health - this.power;
+    }
     // todo: Create a method named 'attack'. This method should accept a Character that will be attacked by this character.
 
         // todo: Update the character that was passed into the attack() method by decreasing its health by this character's power.
@@ -33,7 +41,9 @@ public class Character {
             then the orc's health will need to be set to 59.75 (70 - 10.25).
          */
 
-
+        public String toString(){
+            return "The "+this.type+" "+this.name+" has "+this.health+" health and deals "+ this.power + " damage on each attack.";
+        }
     // todo: Override the default toString() method. This method should return a String that reads "The <type> <name> has <health> health and deals <power> damage on each attack."
     /*
         As an example for this to-do, a wizard named Lisa with health of 100 and
